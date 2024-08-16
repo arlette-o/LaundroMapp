@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 
-import HeaderText from "@/components/structure/headerText";
+import HeaderText from "@/components/headerText";
 
 import WasherHeader from "@/public/assets/WasherHeader.jpeg";
 import Map from "@/public/assets/Map.png";

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 
-import HeaderText from "@/components/structure/headerText";
+import HeaderText from "@/components/headerText";
 
 import Frustration from "@/public/assets/Frustration.jpg";
 

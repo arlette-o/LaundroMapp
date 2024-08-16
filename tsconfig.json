@@ -26,7 +26,11 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "app/tips",
+    "app/machines",
+    "app/fluffnfold",
+    "app/delivery"
   ],
   "exclude": ["node_modules"]
 }
