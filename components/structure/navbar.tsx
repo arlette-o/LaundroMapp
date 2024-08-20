@@ -5,6 +5,9 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+
 import LogoWash from "@/public/assets/LogoWash.svg";
 import { AppBar, Typography } from "@mui/material";
 
@@ -50,7 +53,8 @@ export default function Navbar() {
             <Tab label="Laundry Tips" component={Link} href="/tips" />
           </Tabs>
         </Box>
-        <>socials place</>
+        <GitHubIcon fontSize={"large"} sx={{ color: "#214B6F", mr: 2 }} />
+        <LinkedInIcon fontSize={"large"} sx={{ color: "#214B6F" }} />
       </Box>
     </AppBar>
   );

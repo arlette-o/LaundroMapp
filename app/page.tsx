@@ -44,7 +44,7 @@ export default function Home() {
         <Box display="flex" flexDirection="row" justifyContent="center">
           <Box width="30vw" marginRight={8}>
             <Typography>
-              42 Rivendell Lane, Elvenwood, Middle-Earth 111154
+              4242 Amdir Way Rivendell, Middle-Earth 111154
             </Typography>
             <Typography>
               Tucked away in a tranquil glade surrounded by ancient, towering
