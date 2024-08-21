@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/structure/navbar";
 import Footer from "@/components/structure/footer";
 
+import { connectToMongo } from "@/utils/mongo";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,6 +18,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  connectToMongo();
   return (
     <html lang="en">
       <body>

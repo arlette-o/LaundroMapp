@@ -30,7 +30,8 @@
     "app/tips",
     "app/machines",
     "app/fluffnfold",
-    "app/delivery"
+    "app/delivery",
+    "utils/mongo/index.tsx"
   ],
   "exclude": ["node_modules"]
 }
