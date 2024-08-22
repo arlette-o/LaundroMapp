@@ -31,7 +31,8 @@
     "app/machines",
     "app/fluffnfold",
     "app/delivery",
-    "utils/mongo/index.tsx"
+    "utils/mongo/index.tsx",
+    "app/api/clientCoupon"
   ],
   "exclude": ["node_modules"]
 }

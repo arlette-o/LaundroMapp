@@ -24,7 +24,14 @@ import PhoneIcon from "@mui/icons-material/Phone";
 export default function ScheduleForm() {
   const [deliveryInfo, setDeliveryInfo] = useState({});
 
-  const handleChangeDeliveryInfo = () => {};
+  const handleChangeDeliveryInfo = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setDeliveryInfo({
+      ...deliveryInfo,
+      [event.target.name]: event.target.value,
+    });
+  };
 
   return (
     <Grid container spacing={2} width={"60%"}>
@@ -33,6 +40,7 @@ export default function ScheduleForm() {
           fullWidth
           label="First Name"
           name="fname"
+          onChange={handleChangeDeliveryInfo}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -47,6 +55,7 @@ export default function ScheduleForm() {
           fullWidth
           label="Last Name"
           name="lname"
+          onChange={handleChangeDeliveryInfo}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -61,6 +70,7 @@ export default function ScheduleForm() {
           fullWidth
           label="Phone"
           name="phone"
+          onChange={handleChangeDeliveryInfo}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -75,6 +85,7 @@ export default function ScheduleForm() {
           fullWidth
           label="Email"
           name="email"
+          onChange={handleChangeDeliveryInfo}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">

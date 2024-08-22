@@ -10,6 +10,13 @@ import CouponForm from "@/components/CouponForm";
 import CleanLaundry from "@/public/assets/cleanLaundry.jpg";
 
 export default function FluffNFold() {
+  const fetchClients = async () => {
+    const res = await fetch("http://localhost:3000/api/clientCoupon");
+    const clients = await res.json();
+    console.log("clients: ", clients);
+  };
+
+  fetchClients();
   return (
     <>
       <Card>
