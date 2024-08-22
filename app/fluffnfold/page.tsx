@@ -44,7 +44,7 @@ export default function FluffNFold() {
           8pm) First time customers get 50% off
         </Typography>
 
-        <Box width={"60%"} padding="12px">
+        <Box display={"flex"} justifyContent={"center"} margin={2}>
           <CouponForm />
         </Box>
         <HeaderText title="Fluff 'N' Fold Hours" />

@@ -1,7 +1,7 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
 
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
@@ -12,7 +12,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
-import Select from "@mui/material/Select";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import EmailIcon from "@mui/icons-material/Email";
@@ -20,12 +20,29 @@ import LocalLaundryServiceIcon from "@mui/icons-material/LocalLaundryService";
 import PhoneIcon from "@mui/icons-material/Phone";
 
 export default function CouponForm() {
+  const [clientInfo, setClientInfo] = useState({ service: "" });
+
+  const handleChangeClientInfo = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setClientInfo({ ...clientInfo, [event.target.name]: event.target.value });
+  };
+
+  const handleSelect = (event: SelectChangeEvent<string>) => {
+    setClientInfo({ ...clientInfo, [event.target.name]: event.target.value });
+  };
+
+  const submitClientInfo = () => {
+    console.log(clientInfo);
+  };
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} width={"60%"}>
       <Grid item xs={6}>
         <TextField
           fullWidth
           label="First Name"
+          name="fname"
+          onChange={handleChangeClientInfo}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -39,6 +56,8 @@ export default function CouponForm() {
         <TextField
           fullWidth
           label="Last Name"
+          name="lname"
+          onChange={handleChangeClientInfo}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -52,6 +71,8 @@ export default function CouponForm() {
         <TextField
           fullWidth
           label="Phone"
+          name="phone"
+          onChange={handleChangeClientInfo}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -65,6 +86,8 @@ export default function CouponForm() {
         <TextField
           fullWidth
           label="Email"
+          name="email"
+          onChange={handleChangeClientInfo}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -79,10 +102,13 @@ export default function CouponForm() {
           <InputLabel>Select Service</InputLabel>
           <Select
             label="Select Service"
+            name="service"
+            value={clientInfo.service}
             startAdornment={<LocalLaundryServiceIcon />}
+            onChange={handleSelect}
           >
-            <MenuItem>Fluff'n'Fold</MenuItem>
-            <MenuItem>Delivery</MenuItem>
+            <MenuItem value={"fluff"}>Fluff'n'Fold</MenuItem>
+            <MenuItem value={"delivery"}>Delivery</MenuItem>
           </Select>
         </FormControl>
       </Grid>
@@ -103,7 +129,7 @@ export default function CouponForm() {
         </FormGroup>
       </Grid>
       <Grid item xs={3}>
-        <Button fullWidth variant="contained">
+        <Button fullWidth variant="contained" onClick={submitClientInfo}>
           Get 50% off Coupon
         </Button>
       </Grid>

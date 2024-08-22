@@ -1,18 +1,15 @@
 "use client";
+
+import { useState } from "react";
 import Link from "next/link";
 
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
-import FormControl from "@mui/material/FormControl";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormGroup from "@mui/material/FormGroup";
 import InputAdornment from "@mui/material/InputAdornment";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
-import Select from "@mui/material/Select";
 
 import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -25,12 +22,17 @@ import GradeIcon from "@mui/icons-material/Grade";
 import PhoneIcon from "@mui/icons-material/Phone";
 
 export default function ScheduleForm() {
+  const [deliveryInfo, setDeliveryInfo] = useState({});
+
+  const handleChangeDeliveryInfo = () => {};
+
   return (
     <Grid container spacing={2} width={"60%"}>
       <Grid item xs={6}>
         <TextField
           fullWidth
           label="First Name"
+          name="fname"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -44,6 +46,7 @@ export default function ScheduleForm() {
         <TextField
           fullWidth
           label="Last Name"
+          name="lname"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -57,6 +60,7 @@ export default function ScheduleForm() {
         <TextField
           fullWidth
           label="Phone"
+          name="phone"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -70,6 +74,7 @@ export default function ScheduleForm() {
         <TextField
           fullWidth
           label="Email"
+          name="email"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">

@@ -41,8 +41,11 @@ export default function Delivery() {
         </Typography>
         <Typography>Free Delivery within local Rivendell area</Typography>
         <HeaderText title="Schedule your pickup today!" />
-
-        <ScheduleForm />
+        <Box display={"flex"} justifyContent={"center"}>
+          <ScheduleForm />
+        </Box>
+        <HeaderText title="Track your Delivery" />
+        track delivery number here, and [button]
       </Box>
     </>
   );
