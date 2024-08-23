@@ -1,25 +1,18 @@
-import { MongoClient, Db, Collection } from "mongodb";
+import mongoose from "mongoose";
 
 const URI = process.env.MONGO_URI;
-const DB_NAME = process.env.DB_NAME;
-const CLIENT_COLLECTION_NAME = process.env.CLIENTS_COLLECTION_NAME || "";
-const options = {};
 
-export const collections: { clients?: Collection } = {};
-
-export async function connectToMongo() {
+const connectToMongo = async () => {
   if (!URI) throw new Error("Missing MongoDB URI");
 
+  if (mongoose.connections[0].readyState) return true;
   try {
-    let client: MongoClient = new MongoClient(URI, options);
-    await client.connect();
-
+    await mongoose.connect(URI);
     console.log("Successful connection to database");
-
-    const db: Db = client.db(DB_NAME);
-    const clientCollection: Collection = db.collection(CLIENT_COLLECTION_NAME);
-    collections.clients = clientCollection;
-  } catch (e) {
-    console.log("error connecting to Database...", e);
+    return true;
+  } catch (error) {
+    console.log(error);
   }
-}
+};
+
+export default connectToMongo;

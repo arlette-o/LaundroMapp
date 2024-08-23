@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/structure/navbar";
 import Footer from "@/components/structure/footer";
 
-import { connectToMongo } from "@/utils/mongo";
+import connectToMongo from "@/utils/mongo";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   description: "Next Gen Laundry",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  connectToMongo();
+  await connectToMongo();
   return (
     <html lang="en">
       <body>
