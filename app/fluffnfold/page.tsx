@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 
 import Button from "@mui/material/Button";
@@ -13,16 +12,6 @@ import CouponForm from "@/components/CouponForm";
 import CleanLaundry from "@/public/assets/cleanLaundry.jpg";
 
 export default function FluffNFold() {
-  const fetchClients = async () => {
-    const res = await fetch("http://localhost:3000/api/clientCoupon", {
-      cache: "no-store",
-    });
-
-    const clients = await res.json();
-
-    console.log("clients:", clients);
-  };
-
   return (
     <>
       <Card>
@@ -34,7 +23,6 @@ export default function FluffNFold() {
         />
       </Card>
       <Box textAlign="center" sx={{ marginRight: 20, marginLeft: 20 }}>
-        <Button onClick={fetchClients}> API </Button>
         <HeaderText title="Fluff 'N' Fold" />
         <Typography>
           Are you busy, need some help, or just not feeling up to doing your

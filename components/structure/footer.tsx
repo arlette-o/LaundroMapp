@@ -22,7 +22,7 @@ export default function Footer() {
       >
         <LogoWash />
         <Typography fontSize={18} alignSelf={"center"} ml={2}>
-          LaundroMapp is a locally owned run by women business
+          LaundroMapp is a locally owned, run by women business
         </Typography>
       </Box>
       <Box

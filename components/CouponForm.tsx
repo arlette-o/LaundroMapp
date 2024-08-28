@@ -19,8 +19,24 @@ import EmailIcon from "@mui/icons-material/Email";
 import LocalLaundryServiceIcon from "@mui/icons-material/LocalLaundryService";
 import PhoneIcon from "@mui/icons-material/Phone";
 
+interface ClientInfo {
+  fname: string;
+  lname: string;
+  email: string;
+  phone: string;
+  service: string;
+}
+
+const initState: ClientInfo = {
+  fname: "",
+  lname: "",
+  email: "",
+  phone: "",
+  service: "",
+};
+
 export default function CouponForm() {
-  const [clientInfo, setClientInfo] = useState({ service: "" });
+  const [clientInfo, setClientInfo] = useState(initState);
 
   const handleChangeClientInfo = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -32,9 +48,19 @@ export default function CouponForm() {
     setClientInfo({ ...clientInfo, [event.target.name]: event.target.value });
   };
 
-  const submitClientInfo = () => {
-    console.log(clientInfo);
+  const submitClientInfo = async () => {
+    const res = await fetch(
+      `http://localhost:3000/api/clientCoupon?fname=${clientInfo.fname}&lname=${clientInfo.lname}&email=${clientInfo.email}&phone=${clientInfo.phone}`,
+      {
+        cache: "no-store",
+      }
+    );
+
+    const clients = await res.json();
+
+    console.log("clients:", clients);
   };
+
   return (
     <Grid container spacing={2} width={"60%"}>
       <Grid item xs={6}>
