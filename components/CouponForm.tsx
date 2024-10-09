@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
+import Alert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
 import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
@@ -37,6 +38,7 @@ const initState: ClientInfo = {
 
 export default function CouponForm() {
   const [clientInfo, setClientInfo] = useState(initState);
+  const [alert, setAlert] = useState(false);
 
   const handleChangeClientInfo = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -49,16 +51,28 @@ export default function CouponForm() {
   };
 
   const submitClientInfo = async () => {
-    const res = await fetch(
+    const searchRes = await fetch(
       `http://localhost:3000/api/clientCoupon?fname=${clientInfo.fname}&lname=${clientInfo.lname}&email=${clientInfo.email}&phone=${clientInfo.phone}`,
       {
         cache: "no-store",
       }
     );
+    const clients = await searchRes.json();
 
-    const clients = await res.json();
-
-    console.log("clients:", clients);
+    if (!clients.length) {
+      await fetch("http://localhost:3000/api/clientCoupon", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(clientInfo),
+        cache: "no-store",
+      });
+    } else {
+      //give error message: Coupon already granted to first time customer
+      setAlert(true);
+      console.log("Client already submitted for coupon");
+    }
   };
 
   return (
@@ -159,6 +173,18 @@ export default function CouponForm() {
           Get 50% off Coupon
         </Button>
       </Grid>
+      {alert && (
+        <Grid item xs={12}>
+          <Alert
+            severity="error"
+            onClose={() => {
+              setAlert(false);
+            }}
+          >
+            Oops, looks like you've already submitted for this coupon
+          </Alert>
+        </Grid>
+      )}
     </Grid>
   );
 }

@@ -20,16 +20,17 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   if (!req.body) return;
   try {
-    console.log(req.body);
-    /* const client = new ClientInfoModel(
-      {
-        fname: req.body.fname,
-        lname: ,
-        email: , 
-        phone: ,
-        service: ,
-      }
-    ) */
+    const body = await req.json();
+    const client = new ClientInfoModel({
+      fname: body.fname,
+      lname: body.lname,
+      email: body.email,
+      phone: body.phone,
+      service: body.service,
+    });
+
+    await client.save();
+
     return NextResponse.json({ message: "successfully console logged" });
   } catch (error) {
     console.log(error);
