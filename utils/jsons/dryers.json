@@ -1,0 +1,182 @@
+[
+  {
+    "ID": "200",
+    "available": true,
+    "unavailable": false,
+    "inUse": false,
+    "reserved": false,
+    "duration": null,
+    "reserveTime": null
+  },
+  {
+    "ID": "201",
+    "available": false,
+    "unavailable": true,
+    "inUse": false,
+    "reserved": false,
+    "duration": null,
+    "reserveTime": null
+  },
+  {
+    "ID": "202",
+    "available": false,
+    "unavailable": false,
+    "inUse": true,
+    "reserved": false,
+    "duration": "2023-10-09T12:00:00Z",
+    "reserveTime": null
+  },
+  {
+    "ID": "203",
+    "available": false,
+    "unavailable": false,
+    "inUse": false,
+    "reserved": true,
+    "duration": null,
+    "reserveTime": "2023-10-09T15:00:00Z"
+  },
+  {
+    "ID": "204",
+    "available": false,
+    "unavailable": false,
+    "inUse": false,
+    "reserved": true,
+    "duration": null,
+    "reserveTime": "2023-10-09T18:00:00Z"
+  },
+  {
+    "ID": "205",
+    "available": false,
+    "unavailable": false,
+    "inUse": true,
+    "reserved": false,
+    "duration": "2023-10-09T10:00:00Z",
+    "reserveTime": null
+  },
+  {
+    "ID": "206",
+    "available": false,
+    "unavailable": true,
+    "inUse": false,
+    "reserved": false,
+    "duration": null,
+    "reserveTime": null
+  },
+  {
+    "ID": "207",
+    "available": false,
+    "unavailable": false,
+    "inUse": false,
+    "reserved": true,
+    "duration": null,
+    "reserveTime": "2023-10-09T20:00:00Z"
+  },
+  {
+    "ID": "208",
+    "available": false,
+    "unavailable": false,
+    "inUse": true,
+    "reserved": false,
+    "duration": "2023-10-09T14:00:00Z",
+    "reserveTime": null
+  },
+  {
+    "ID": "209",
+    "available": true,
+    "unavailable": false,
+    "inUse": false,
+    "reserved": false,
+    "duration": null,
+    "reserveTime": null
+  },
+  {
+    "ID": "210",
+    "available": false,
+    "unavailable": true,
+    "inUse": false,
+    "reserved": false,
+    "duration": null,
+    "reserveTime": null
+  },
+  {
+    "ID": "211",
+    "available": false,
+    "unavailable": false,
+    "inUse": true,
+    "reserved": false,
+    "duration": "2024-10-09T14:00:00Z",
+    "reserveTime": null
+  },
+  {
+    "ID": "212",
+    "available": false,
+    "unavailable": false,
+    "inUse": false,
+    "reserved": true,
+    "duration": null,
+    "reserveTime": "2024-10-09T10:00:00Z"
+  },
+  {
+    "ID": "213",
+    "available": true,
+    "unavailable": false,
+    "inUse": false,
+    "reserved": false,
+    "duration": null,
+    "reserveTime": null
+  },
+  {
+    "ID": "214",
+    "available": false,
+    "unavailable": false,
+    "inUse": true,
+    "reserved": false,
+    "duration": "2024-10-09T15:00:00Z",
+    "reserveTime": null
+  },
+  {
+    "ID": "215",
+    "available": false,
+    "unavailable": true,
+    "inUse": false,
+    "reserved": false,
+    "duration": null,
+    "reserveTime": null
+  },
+  {
+    "ID": "216",
+    "available": false,
+    "unavailable": false,
+    "inUse": false,
+    "reserved": true,
+    "duration": null,
+    "reserveTime": "2024-10-09T12:00:00Z"
+  },
+  {
+    "ID": "217",
+    "available": false,
+    "unavailable": false,
+    "inUse": true,
+    "reserved": false,
+    "duration": "2024-10-09T16:00:00Z",
+    "reserveTime": null
+  },
+  {
+    "ID": "218",
+    "available": true,
+    "unavailable": false,
+    "inUse": false,
+    "reserved": false,
+    "duration": null,
+    "reserveTime": null
+  },
+  {
+    "ID": "219",
+    "available": false,
+    "unavailable": false,
+    "inUse": false,
+    "reserved": true,
+    "duration": null,
+    "reserveTime": "2024-10-09T11:00:00Z"
+  }
+]

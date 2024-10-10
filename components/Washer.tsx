@@ -5,6 +5,7 @@ import { useState } from "react";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
+import Chip from "@mui/material/Chip";
 
 import UnavailableWasher from "@/public/assets/UnavailableWash.svg";
 
@@ -27,7 +28,7 @@ interface WasherProps {
   ID: Number;
 }
 
-export default function Washer({ placement, title }: WasherProps) {
+export default function Washer({ placement, title, ID }: WasherProps) {
   const [open, setOpen] = useState(false);
 
   const handleTooltipClose = () => {
@@ -41,6 +42,7 @@ export default function Washer({ placement, title }: WasherProps) {
   return (
     <ClickAwayListener onClickAway={handleTooltipClose}>
       <div>
+        {placement === "left" && <Chip label={ID.toString()} />}
         <Tooltip
           arrow
           title={title}
@@ -58,6 +60,7 @@ export default function Washer({ placement, title }: WasherProps) {
             <UnavailableWasher />
           </IconButton>
         </Tooltip>
+        {placement === "right" && <Chip label={ID.toString()} />}
       </div>
     </ClickAwayListener>
   );

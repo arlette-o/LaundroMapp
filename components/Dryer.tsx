@@ -7,6 +7,8 @@ import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 
 import UnavailableDryer from "@/public/assets/UnavailableDryer.svg";
+import Box from "@mui/material/Box";
+import Chip from "@mui/material/Chip";
 
 interface DryerProps {
   placement:
@@ -27,7 +29,7 @@ interface DryerProps {
   ID: Number;
 }
 
-export default function Dryer({ placement, title }: DryerProps) {
+export default function Dryer({ placement, title, ID }: DryerProps) {
   const [open, setOpen] = useState(false);
 
   const handleTooltipClose = () => {
@@ -40,7 +42,7 @@ export default function Dryer({ placement, title }: DryerProps) {
 
   return (
     <ClickAwayListener onClickAway={handleTooltipClose}>
-      <div>
+      <Box display={"flex"} flexDirection={"column"} textAlign={"center"}>
         <Tooltip
           arrow
           title={title}
@@ -58,7 +60,8 @@ export default function Dryer({ placement, title }: DryerProps) {
             <UnavailableDryer />
           </IconButton>
         </Tooltip>
-      </div>
+        <Chip label={ID.toString()} size="small" />
+      </Box>
     </ClickAwayListener>
   );
 }

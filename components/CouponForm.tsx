@@ -43,7 +43,12 @@ export default function CouponForm() {
   const handleChangeClientInfo = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    setClientInfo({ ...clientInfo, [event.target.name]: event.target.value });
+    setClientInfo({
+      ...clientInfo,
+      [event.target.name]: event.target.value.toLowerCase(),
+    });
+    //valid email regex
+    // ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
   };
 
   const handleSelect = (event: SelectChangeEvent<string>) => {

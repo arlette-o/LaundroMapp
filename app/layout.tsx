@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/structure/navbar";
 import Footer from "@/components/structure/footer";
 
-import connectToMongo from "@/utils/mongo";
+import connectToMongo from "@/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 

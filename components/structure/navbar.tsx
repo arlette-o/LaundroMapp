@@ -5,6 +5,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 
+import IconButton from "@mui/material/IconButton";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
@@ -16,6 +17,22 @@ export default function Navbar() {
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
+  };
+
+  const openGithub = () => {
+    window.open(
+      "https://github.com/arlette-o",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  const openLinkedIn = () => {
+    window.open(
+      "https://www.linkedin.com/in/arlette-olalde-75a3a7234/",
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   return (
@@ -53,8 +70,12 @@ export default function Navbar() {
             <Tab label="Laundry Tips" component={Link} href="/tips" />
           </Tabs>
         </Box>
-        <GitHubIcon fontSize={"large"} sx={{ color: "#214B6F", mr: 2 }} />
-        <LinkedInIcon fontSize={"large"} sx={{ color: "#214B6F" }} />
+        <IconButton sx={{ mr: 2 }} onClick={openGithub}>
+          <GitHubIcon fontSize={"large"} sx={{ color: "#214B6F" }} />
+        </IconButton>
+        <IconButton onClick={openLinkedIn}>
+          <LinkedInIcon fontSize={"large"} sx={{ color: "#214B6F" }} />
+        </IconButton>
       </Box>
     </AppBar>
   );
