@@ -6,9 +6,15 @@ import ClickAwayListener from "@mui/material/ClickAwayListener";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 
-import UnavailableDryer from "@/public/assets/UnavailableDryer.svg";
 import Box from "@mui/material/Box";
 import Chip from "@mui/material/Chip";
+
+import Machine from "../components/types/machines";
+
+import UnavailableDryer from "@/public/assets/UnavailableDryer.svg";
+import Available from "@/public/assets/AvailableDryer.svg";
+import Reserved from "@/public/assets/ReservedDryer.svg";
+import InUse from "@/public/assets/InUseDryer.svg";
 
 interface DryerProps {
   placement:
@@ -27,9 +33,10 @@ interface DryerProps {
     | undefined;
   title: String;
   ID: Number;
+  dryerData: Machine;
 }
 
-export default function Dryer({ placement, title, ID }: DryerProps) {
+export default function Dryer({ placement, title, ID, dryerData }: DryerProps) {
   const [open, setOpen] = useState(false);
 
   const handleTooltipClose = () => {
@@ -57,10 +64,13 @@ export default function Dryer({ placement, title, ID }: DryerProps) {
           }}
         >
           <IconButton onClick={handleTooltipOpen}>
-            <UnavailableDryer />
+            {dryerData.unavailable && <UnavailableDryer />}
+            {dryerData.available && <Available />}
+            {dryerData.reserved && <Reserved />}
+            {dryerData.inUse && <InUse />}
           </IconButton>
         </Tooltip>
-        <Chip label={ID.toString()} size="small" />
+        <Chip label={dryerData.ID} size="small" />
       </Box>
     </ClickAwayListener>
   );

@@ -4,8 +4,8 @@ import MachineSchema from "@/utils/mongo/machineSchema";
 
 export async function GET(req: NextRequest) {
   try {
-    const all = await MachineSchema.find({});
-    console.log(all);
+    const all = await MachineSchema.find({}).sort({ ID: 1 });
+
     return NextResponse.json(all);
   } catch (error: any) {
     console.error(error);

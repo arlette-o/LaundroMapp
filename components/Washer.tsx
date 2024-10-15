@@ -1,13 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import Chip from "@mui/material/Chip";
 
+import Machine from "../components/types/machines";
+
 import UnavailableWasher from "@/public/assets/UnavailableWash.svg";
+import Available from "@/public/assets/AvailableWash.svg";
+import Reserved from "@/public/assets/ReservedWash.svg";
+import InUse from "@/public/assets/InUseWash.svg";
 
 interface WasherProps {
   placement:
@@ -26,9 +31,15 @@ interface WasherProps {
     | undefined;
   title: String;
   ID: Number;
+  washerData: Machine;
 }
 
-export default function Washer({ placement, title, ID }: WasherProps) {
+export default function Washer({
+  placement,
+  title,
+  ID,
+  washerData,
+}: WasherProps) {
   const [open, setOpen] = useState(false);
 
   const handleTooltipClose = () => {
@@ -42,7 +53,7 @@ export default function Washer({ placement, title, ID }: WasherProps) {
   return (
     <ClickAwayListener onClickAway={handleTooltipClose}>
       <div>
-        {placement === "left" && <Chip label={ID.toString()} />}
+        {placement === "left" && <Chip label={washerData.ID} />}
         <Tooltip
           arrow
           title={title}
@@ -57,10 +68,13 @@ export default function Washer({ placement, title, ID }: WasherProps) {
           }}
         >
           <IconButton onClick={handleTooltipOpen}>
-            <UnavailableWasher />
+            {washerData.available && <Available />}
+            {washerData.reserved && <Reserved />}
+            {washerData.inUse && <InUse />}
+            {washerData.unavailable && <UnavailableWasher />}
           </IconButton>
         </Tooltip>
-        {placement === "right" && <Chip label={ID.toString()} />}
+        {placement === "right" && <Chip label={washerData.ID} />}
       </div>
     </ClickAwayListener>
   );
