@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import IconButton from "@mui/material/IconButton";
@@ -16,28 +16,18 @@ import Available from "@/public/assets/AvailableDryer.svg";
 import Reserved from "@/public/assets/ReservedDryer.svg";
 import InUse from "@/public/assets/InUseDryer.svg";
 
+import ChipColorProps from "@/components/types/chipColor";
+import PlacementProps from "./types/placement";
+
 interface DryerProps {
-  placement:
-    | "bottom-end"
-    | "bottom-start"
-    | "bottom"
-    | "left-end"
-    | "left-start"
-    | "left"
-    | "right-end"
-    | "right-start"
-    | "right"
-    | "top-end"
-    | "top-start"
-    | "top"
-    | undefined;
-  title: String;
-  ID: Number;
+  placement: PlacementProps;
   dryerData: Machine;
 }
 
-export default function Dryer({ placement, title, ID, dryerData }: DryerProps) {
+export default function Dryer({ placement, dryerData }: DryerProps) {
   const [open, setOpen] = useState(false);
+  const [color, setColor] = useState<ChipColorProps>("unavailable");
+  const [message, setMessage] = useState<String>("Out of Service");
 
   const handleTooltipClose = () => {
     setOpen(false);
@@ -47,12 +37,40 @@ export default function Dryer({ placement, title, ID, dryerData }: DryerProps) {
     setOpen(true);
   };
 
+  const determineAvailability = () => {
+    switch (true) {
+      case dryerData.available:
+        setColor("available");
+        setMessage("Machine Available");
+        break;
+      case dryerData.inUse:
+        setColor("inuse");
+        setMessage("Machine in use for: ");
+        break;
+      case dryerData.reserved:
+        setColor("reserved");
+        setMessage("Machine reserved for: ");
+        break;
+      default:
+        setColor("unavailable");
+        setMessage("Out of Service");
+        break;
+    }
+  };
+
+  useEffect(() => {
+    determineAvailability();
+  }, []);
+
   return (
     <ClickAwayListener onClickAway={handleTooltipClose}>
       <Box display={"flex"} flexDirection={"column"} textAlign={"center"}>
+        {placement === "top" && (
+          <Chip label={dryerData.ID} size="small" color={color} />
+        )}
         <Tooltip
           arrow
-          title={title}
+          title={message}
           placement={placement}
           disableFocusListener
           disableHoverListener
@@ -62,6 +80,18 @@ export default function Dryer({ placement, title, ID, dryerData }: DryerProps) {
           PopperProps={{
             disablePortal: true,
           }}
+          slotProps={{
+            popper: {
+              modifiers: [
+                {
+                  name: "offset",
+                  options: {
+                    offset: [0, 16],
+                  },
+                },
+              ],
+            },
+          }}
         >
           <IconButton onClick={handleTooltipOpen}>
             {dryerData.unavailable && <UnavailableDryer />}
@@ -70,7 +100,9 @@ export default function Dryer({ placement, title, ID, dryerData }: DryerProps) {
             {dryerData.inUse && <InUse />}
           </IconButton>
         </Tooltip>
-        <Chip label={dryerData.ID} size="small" />
+        {placement === "bottom" && (
+          <Chip label={dryerData.ID} size="small" color={color} />
+        )}
       </Box>
     </ClickAwayListener>
   );

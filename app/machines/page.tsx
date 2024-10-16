@@ -4,6 +4,8 @@ import Box from "@mui/material/Box";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Grid from "@mui/material/Grid";
 import Skeleton from "@mui/material/Skeleton";
+import ThemeProvider from "@mui/material/styles/ThemeProvider";
+import createTheme from "@mui/material/styles/createTheme";
 
 import Washer from "@/components/Washer";
 import Dryer from "@/components/Dryer";
@@ -14,6 +16,8 @@ import SeatKidArea from "@/public/assets/SeatingKidsArea.png";
 import Image from "next/image";
 
 import Machine from "../../components/types/machines";
+
+import { theme } from "@/theme/theme";
 
 export default function Machines() {
   const [machines, setMachines] = useState<Machine[]>([]);
@@ -38,7 +42,7 @@ export default function Machines() {
     fetchMachineData();
   }, []);
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Box display="flex" flexDirection="row" justifyContent="center">
         <HeaderText title="Machines" />{" "}
       </Box>
@@ -59,8 +63,6 @@ export default function Machines() {
                       <Dryer
                         key={dryerID}
                         placement="top"
-                        title="Out of service"
-                        ID={dryerID}
                         dryerData={machines[dryerStart]}
                       />
                     );
@@ -74,8 +76,6 @@ export default function Machines() {
                       <Dryer
                         key={dryerID}
                         placement="bottom"
-                        title="Out of service"
-                        ID={dryerID}
                         dryerData={machines[dryerStart]}
                       />
                     );
@@ -256,6 +256,6 @@ export default function Machines() {
       ) : (
         <Skeleton variant="rounded" width={210} height={60} />
       )}
-    </>
+    </ThemeProvider>
   );
 }

@@ -11,8 +11,8 @@
   {
     "ID": "201",
     "available": false,
-    "unavailable": true,
-    "inUse": false,
+    "unavailable": false,
+    "inUse": true,
     "reserved": false,
     "duration": null,
     "reserveTime": null
@@ -91,8 +91,8 @@
   },
   {
     "ID": "210",
-    "available": false,
-    "unavailable": true,
+    "available": true,
+    "unavailable": false,
     "inUse": false,
     "reserved": false,
     "duration": null,

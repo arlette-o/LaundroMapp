@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FunctionComponent, useState } from "react";
+import { useEffect, useState } from "react";
 
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import IconButton from "@mui/material/IconButton";
@@ -14,33 +14,20 @@ import Available from "@/public/assets/AvailableWash.svg";
 import Reserved from "@/public/assets/ReservedWash.svg";
 import InUse from "@/public/assets/InUseWash.svg";
 
+import ChipColorProps from "@/components/types/chipColor";
+import PlacementProps from "./types/placement";
+
 interface WasherProps {
-  placement:
-    | "bottom-end"
-    | "bottom-start"
-    | "bottom"
-    | "left-end"
-    | "left-start"
-    | "left"
-    | "right-end"
-    | "right-start"
-    | "right"
-    | "top-end"
-    | "top-start"
-    | "top"
-    | undefined;
+  placement: PlacementProps;
   title: String;
   ID: Number;
   washerData: Machine;
 }
 
-export default function Washer({
-  placement,
-  title,
-  ID,
-  washerData,
-}: WasherProps) {
+export default function Washer({ placement, washerData }: WasherProps) {
   const [open, setOpen] = useState(false);
+  const [color, setColor] = useState<ChipColorProps>("unavailable");
+  const [message, setMessage] = useState<String>("Out of Service");
 
   const handleTooltipClose = () => {
     setOpen(false);
@@ -50,13 +37,38 @@ export default function Washer({
     setOpen(true);
   };
 
+  const determineAvailability = () => {
+    switch (true) {
+      case washerData.available:
+        setColor("available");
+        setMessage("Machine Available");
+        break;
+      case washerData.inUse:
+        setColor("inuse");
+        setMessage("Machine in use for: ");
+        break;
+      case washerData.reserved:
+        setColor("reserved");
+        setMessage("Machine reserved for: ");
+        break;
+      default:
+        setColor("unavailable");
+        setMessage("Out of Service");
+        break;
+    }
+  };
+
+  useEffect(() => {
+    determineAvailability();
+  }, []);
+
   return (
     <ClickAwayListener onClickAway={handleTooltipClose}>
       <div>
-        {placement === "left" && <Chip label={washerData.ID} />}
+        {placement === "left" && <Chip label={washerData.ID} color={color} />}
         <Tooltip
           arrow
-          title={title}
+          title={message}
           placement={placement}
           disableFocusListener
           disableHoverListener
@@ -74,7 +86,7 @@ export default function Washer({
             {washerData.unavailable && <UnavailableWasher />}
           </IconButton>
         </Tooltip>
-        {placement === "right" && <Chip label={washerData.ID} />}
+        {placement === "right" && <Chip label={washerData.ID} color={color} />}
       </div>
     </ClickAwayListener>
   );
