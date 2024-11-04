@@ -60,6 +60,8 @@ export default function Washer({ placement, washerData }: WasherProps) {
 
   useEffect(() => {
     determineAvailability();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

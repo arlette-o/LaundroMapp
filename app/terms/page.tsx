@@ -96,7 +96,7 @@ export default function Terms() {
             <li>
               <strong>Discount: </strong>
               Coupon entitles the bearer to 50% off the total cost of any Fluff
-              'n' Fold services.{" "}
+              &apos;n&apos; Fold services.{" "}
             </li>
             <li>
               <strong>Exclusions: </strong>

@@ -152,7 +152,7 @@ export default function CouponForm() {
             startAdornment={<LocalLaundryServiceIcon />}
             onChange={handleSelect}
           >
-            <MenuItem value={"fluff"}>Fluff'n'Fold</MenuItem>
+            <MenuItem value={"fluff"}>Fluff&apos;n&apos;Fold</MenuItem>
             <MenuItem value={"delivery"}>Delivery</MenuItem>
           </Select>
         </FormControl>
@@ -186,7 +186,7 @@ export default function CouponForm() {
               setAlert(false);
             }}
           >
-            Oops, looks like you've already submitted for this coupon
+            Oops, looks like you&apos;ve already submitted for this coupon
           </Alert>
         </Grid>
       )}

@@ -24,21 +24,21 @@ export default function FluffNFold() {
         <HeaderText title="Fluff 'N' Fold" />
         <Typography>
           Are you busy, need some help, or just not feeling up to doing your
-          laundry? We'll take the hassle out of laundry day so you can focus on
-          what truly matters. Our professional team delivers top-notch care for
-          your clothes with a range of services designed to fit your busy
-          lifestyle. From everyday washes and delicate hand-washing to
+          laundry? We&apos;ll take the hassle out of laundry day so you can
+          focus on what truly matters. Our professional team delivers top-notch
+          care for your clothes with a range of services designed to fit your
+          busy lifestyle. From everyday washes and delicate hand-washing to
           fluff-and-fold and express service options, we handle it all with
           precision and a touch of personal care. Just walk in and drop off your
           clothes. No appointment necessary.
         </Typography>
         <HeaderText title="Rates" />
-        <Typography>Standard Fluff 'N' Fold</Typography>
+        <Typography>Standard Fluff &apos;N&apos; Fold</Typography>
         <Typography>
           $2.25 /lb except for specialty items 24 hour turnaround First time
           customers get 50% off
         </Typography>
-        <Typography>Fluff 'N' Fold Express</Typography>
+        <Typography>Fluff &apos;N&apos; Fold Express</Typography>
         <Typography>
           $2.75 /lb except for specialty items Same day service (drop off before
           8pm) First time customers get 50% off
