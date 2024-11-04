@@ -20,6 +20,8 @@ import EmailIcon from "@mui/icons-material/Email";
 import LocalLaundryServiceIcon from "@mui/icons-material/LocalLaundryService";
 import PhoneIcon from "@mui/icons-material/Phone";
 
+const ENVIRONMENT = process.env.NEXT_PUBLIC_PROD_ENV;
+
 interface ClientInfo {
   fname: string;
   lname: string;
@@ -57,7 +59,7 @@ export default function CouponForm() {
 
   const submitClientInfo = async () => {
     const searchRes = await fetch(
-      `http://localhost:3000/api/clientCoupon?fname=${clientInfo.fname}&lname=${clientInfo.lname}&email=${clientInfo.email}&phone=${clientInfo.phone}`,
+      `${ENVIRONMENT}api/clientCoupon?fname=${clientInfo.fname}&lname=${clientInfo.lname}&email=${clientInfo.email}&phone=${clientInfo.phone}`,
       {
         cache: "no-store",
       }
@@ -65,7 +67,7 @@ export default function CouponForm() {
     const clients = await searchRes.json();
 
     if (!clients.length) {
-      await fetch("http://localhost:3000/api/clientCoupon", {
+      await fetch(`${ENVIRONMENT}api/clientCoupon`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

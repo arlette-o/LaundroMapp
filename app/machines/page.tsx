@@ -5,7 +5,6 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import Grid from "@mui/material/Grid";
 import Skeleton from "@mui/material/Skeleton";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
-import createTheme from "@mui/material/styles/createTheme";
 
 import Washer from "@/components/Washer";
 import Dryer from "@/components/Dryer";
@@ -19,6 +18,8 @@ import Machine from "../../components/types/machines";
 
 import { theme } from "@/theme/theme";
 
+const ENVIRONMENT = process.env.NEXT_PUBLIC_PROD_ENV;
+
 export default function Machines() {
   const [machines, setMachines] = useState<Machine[]>([]);
   let washerID = 99;
@@ -30,7 +31,7 @@ export default function Machines() {
    - availability
    - time left on reservations/durations */
   const fetchMachineData = async () => {
-    const response = await fetch("http://localhost:3000/api/machines", {
+    const response = await fetch(`${ENVIRONMENT}api/machines`, {
       cache: "no-store",
     });
 
