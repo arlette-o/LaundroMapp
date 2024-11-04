@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import HeaderText from "@/components/headerText";
 import CouponForm from "@/components/CouponForm";
 
-import CleanLaundry from "@/public/assets/cleanLaundry.jpg";
+import CleanLaundry from "@/public/assets/CleanLaundry.jpg";
 
 export default function FluffNFold() {
   return (
