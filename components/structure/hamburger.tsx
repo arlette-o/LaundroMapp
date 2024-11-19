@@ -48,7 +48,7 @@ export default function Hamburger() {
           edge="start"
           color="inherit"
           aria-label="menu"
-          sx={{ mr: 2 }}
+          sx={{ mr: "9vw" }}
           onClick={toggleDrawer}
         >
           <MenuIcon />

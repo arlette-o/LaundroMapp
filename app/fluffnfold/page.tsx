@@ -20,7 +20,7 @@ export default function FluffNFold() {
           width={2000}
         />
       </Card>
-      <Box textAlign="center" sx={{ marginRight: 20, marginLeft: 20 }}>
+      <Box textAlign="center" sx={{ marginRight: "10vw", marginLeft: "10vw" }}>
         <HeaderText title="Fluff 'N' Fold" />
         <Typography>
           Are you busy, need some help, or just not feeling up to doing your

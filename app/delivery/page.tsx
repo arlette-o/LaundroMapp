@@ -14,7 +14,7 @@ export default function Delivery() {
       <Card>
         <Image src={DeliveryVan} alt="Header Image" height={100} width={2000} />
       </Card>
-      <Box textAlign="center" sx={{ marginRight: 20, marginLeft: 20 }}>
+      <Box textAlign="center" sx={{ marginRight: "10vw", marginLeft: "10vw" }}>
         <HeaderText title="Laundry Delievered Straight to You" />
         <Typography>
           Discover the ultimate convenience with our Laundry Delivery Service,

@@ -14,7 +14,7 @@ export default function Tips() {
       <Card>
         <Image src={Frustration} alt="Header Image" height={100} width={2000} />
       </Card>
-      <Box textAlign="left" sx={{ marginRight: 20, marginLeft: 20 }}>
+      <Box textAlign="left" sx={{ marginRight: "2vw", marginLeft: "2vw" }}>
         <HeaderText title="Avoid Frustration" />
         <Typography>
           By following these tips, you can keep your laundry looking great and
