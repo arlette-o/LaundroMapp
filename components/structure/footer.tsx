@@ -17,11 +17,11 @@ export default function Footer() {
           display: "flex",
           justifyContent: "center",
           textAlign: "center",
-          margin: 5,
+          margin: "5vw",
         }}
       >
         <LogoWash />
-        <Typography fontSize={18} alignSelf={"center"} ml={2}>
+        <Typography fontSize="3vw" alignSelf={"center"} ml="1vw">
           LaundroMapp is a locally owned, run by women business
         </Typography>
       </Box>
@@ -29,8 +29,8 @@ export default function Footer() {
         sx={{
           display: "flex",
           flexDirection: "row",
-          ml: 30,
-          mr: 30,
+          ml: "10vw",
+          mr: "10vw",
           justifyContent: "space-between",
         }}
       >

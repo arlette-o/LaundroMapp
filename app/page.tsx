@@ -20,7 +20,7 @@ export default function Home() {
           width={2000}
         />
       </Card>
-      <Box textAlign="center" sx={{ marginRight: 20, marginLeft: 20 }}>
+      <Box textAlign="center" sx={{ marginRight: "10vw", marginLeft: "10vw" }}>
         <HeaderText title="About Us" />
         Welcome to LaundroMapp, where we turn laundry day into a breeze! At
         LaundroMapp, we’re dedicated to providing a top-notch laundry experience
@@ -42,7 +42,7 @@ export default function Home() {
         as possible!
         <HeaderText title="Location" />
         <Box display="flex" flexDirection="row" justifyContent="center">
-          <Box width="30vw" marginRight={8}>
+          <Box width="50%" marginRight={"8vw"}>
             <Typography>
               4242 Amdir Way Rivendell, Middle-Earth 111154
             </Typography>
