@@ -85,170 +85,180 @@ export default function Machines() {
               </Box>
             </Grid>
             {/*Washer Row 1*/}
-            <Grid item xs={1.75}>
-              <ButtonGroup orientation="vertical" disableElevation>
-                {Array.from(Array(4)).map((_) => {
-                  washerID++;
-                  washerStart++;
-                  return (
-                    <Washer
-                      key={washerID}
-                      placement="left"
-                      title="Out of Service"
-                      ID={washerID}
-                      washerData={machines[washerStart]}
-                    />
-                  );
-                })}
-              </ButtonGroup>
-              <ButtonGroup disableElevation orientation="vertical">
-                {Array.from(Array(4)).map((_) => {
-                  washerID++;
-                  washerStart++;
-                  return (
-                    <Washer
-                      key={washerID}
-                      placement="right"
-                      title="Out of Service"
-                      ID={washerID}
-                      washerData={machines[washerStart]}
-                    />
-                  );
-                })}
-              </ButtonGroup>
-            </Grid>
-            {/*Washer Row 2*/}
-            <Grid item xs={1.75}>
-              <ButtonGroup orientation="vertical" disableElevation>
-                {Array.from(Array(4)).map((_) => {
-                  washerID++;
-                  washerStart++;
-                  return (
-                    <Washer
-                      key={washerID}
-                      placement="left"
-                      title="Out of Service"
-                      ID={washerID}
-                      washerData={machines[washerStart]}
-                    />
-                  );
-                })}
-              </ButtonGroup>
-              <ButtonGroup disableElevation orientation="vertical">
-                {Array.from(Array(4)).map((_) => {
-                  washerID++;
-                  washerStart++;
-                  return (
-                    <Washer
-                      key={washerID}
-                      placement="right"
-                      title="Out of Service"
-                      ID={washerID}
-                      washerData={machines[washerStart]}
-                    />
-                  );
-                })}
-              </ButtonGroup>
-            </Grid>
-            {/*Washer Row 3*/}
-            <Grid item xs={1.75}>
-              <ButtonGroup orientation="vertical" disableElevation>
-                {Array.from(Array(4)).map((_) => {
-                  washerID++;
-                  washerStart++;
-                  return (
-                    <Washer
-                      key={washerID}
-                      placement="left"
-                      title="Out of Service"
-                      ID={washerID}
-                      washerData={machines[washerStart]}
-                    />
-                  );
-                })}
-              </ButtonGroup>
-              <ButtonGroup disableElevation orientation="vertical">
-                {Array.from(Array(4)).map((_) => {
-                  washerID++;
-                  washerStart++;
-                  return (
-                    <Washer
-                      key={washerID}
-                      placement="right"
-                      title="Out of Service"
-                      ID={washerID}
-                      washerData={machines[washerStart]}
-                    />
-                  );
-                })}
-              </ButtonGroup>
-            </Grid>
-            {/*Washer Row 4*/}
-            <Grid item xs={1.75}>
-              <ButtonGroup orientation="vertical" disableElevation>
-                {Array.from(Array(4)).map((_) => {
-                  washerID++;
-                  washerStart++;
-                  return (
-                    <Washer
-                      key={washerID}
-                      placement="left"
-                      title="Out of Service"
-                      ID={washerID}
-                      washerData={machines[washerStart]}
-                    />
-                  );
-                })}
-              </ButtonGroup>
-              <ButtonGroup disableElevation orientation="vertical">
-                {Array.from(Array(4)).map((_) => {
-                  washerID++;
-                  washerStart++;
-                  return (
-                    <Washer
-                      key={washerID}
-                      placement="right"
-                      title="Out of Service"
-                      ID={washerID}
-                      washerData={machines[washerStart]}
-                    />
-                  );
-                })}
-              </ButtonGroup>
-            </Grid>
-            {/*Washer Row 5*/}
-            <Grid item xs={1.75}>
-              <ButtonGroup orientation="vertical" disableElevation>
-                {Array.from(Array(4)).map((_) => {
-                  washerID++;
-                  washerStart++;
-                  return (
-                    <Washer
-                      key={washerID}
-                      placement="left"
-                      title="Out of Service"
-                      ID={washerID}
-                      washerData={machines[washerStart]}
-                    />
-                  );
-                })}
-              </ButtonGroup>
-              <ButtonGroup disableElevation orientation="vertical">
-                {Array.from(Array(4)).map((_) => {
-                  washerID++;
-                  washerStart++;
-                  return (
-                    <Washer
-                      key={washerID}
-                      placement="right"
-                      title="Out of Service"
-                      ID={washerID}
-                      washerData={machines[washerStart]}
-                    />
-                  );
-                })}
-              </ButtonGroup>
-            </Grid>
+            <Box display="flex" flexDirection="row">
+              <Box display="flex" flexDirection="row" mr={2}>
+                <ButtonGroup orientation="vertical" disableElevation>
+                  {Array.from(Array(4)).map((_) => {
+                    washerID++;
+                    washerStart++;
+                    return (
+                      <Washer
+                        key={washerID}
+                        placement="left"
+                        title="Out of Service"
+                        ID={washerID}
+                        washerData={machines[washerStart]}
+                      />
+                    );
+                  })}
+                </ButtonGroup>
+                <ButtonGroup disableElevation orientation="vertical">
+                  {Array.from(Array(4)).map((_) => {
+                    washerID++;
+                    washerStart++;
+                    return (
+                      <Washer
+                        key={washerID}
+                        placement="right"
+                        title="Out of Service"
+                        ID={washerID}
+                        washerData={machines[washerStart]}
+                      />
+                    );
+                  })}
+                </ButtonGroup>
+              </Box>
+
+              {/*Washer Row 2*/}
+
+              <Box display="flex" flexDirection="row" mr={2}>
+                <ButtonGroup orientation="vertical" disableElevation>
+                  {Array.from(Array(4)).map((_) => {
+                    washerID++;
+                    washerStart++;
+                    return (
+                      <Washer
+                        key={washerID}
+                        placement="left"
+                        title="Out of Service"
+                        ID={washerID}
+                        washerData={machines[washerStart]}
+                      />
+                    );
+                  })}
+                </ButtonGroup>
+                <ButtonGroup disableElevation orientation="vertical">
+                  {Array.from(Array(4)).map((_) => {
+                    washerID++;
+                    washerStart++;
+                    return (
+                      <Washer
+                        key={washerID}
+                        placement="right"
+                        title="Out of Service"
+                        ID={washerID}
+                        washerData={machines[washerStart]}
+                      />
+                    );
+                  })}
+                </ButtonGroup>
+              </Box>
+
+              {/*Washer Row 3*/}
+
+              <Box display="flex" flexDirection="row" mr={2}>
+                <ButtonGroup orientation="vertical" disableElevation>
+                  {Array.from(Array(4)).map((_) => {
+                    washerID++;
+                    washerStart++;
+                    return (
+                      <Washer
+                        key={washerID}
+                        placement="left"
+                        title="Out of Service"
+                        ID={washerID}
+                        washerData={machines[washerStart]}
+                      />
+                    );
+                  })}
+                </ButtonGroup>
+                <ButtonGroup disableElevation orientation="vertical">
+                  {Array.from(Array(4)).map((_) => {
+                    washerID++;
+                    washerStart++;
+                    return (
+                      <Washer
+                        key={washerID}
+                        placement="right"
+                        title="Out of Service"
+                        ID={washerID}
+                        washerData={machines[washerStart]}
+                      />
+                    );
+                  })}
+                </ButtonGroup>
+              </Box>
+
+              {/*Washer Row 4*/}
+
+              <Box display="flex" flexDirection="row" mr={2}>
+                <ButtonGroup orientation="vertical" disableElevation>
+                  {Array.from(Array(4)).map((_) => {
+                    washerID++;
+                    washerStart++;
+                    return (
+                      <Washer
+                        key={washerID}
+                        placement="left"
+                        title="Out of Service"
+                        ID={washerID}
+                        washerData={machines[washerStart]}
+                      />
+                    );
+                  })}
+                </ButtonGroup>
+                <ButtonGroup disableElevation orientation="vertical">
+                  {Array.from(Array(4)).map((_) => {
+                    washerID++;
+                    washerStart++;
+                    return (
+                      <Washer
+                        key={washerID}
+                        placement="right"
+                        title="Out of Service"
+                        ID={washerID}
+                        washerData={machines[washerStart]}
+                      />
+                    );
+                  })}
+                </ButtonGroup>
+              </Box>
+
+              {/*Washer Row 5*/}
+
+              <Box display="flex" flexDirection="row" mr={2}>
+                <ButtonGroup orientation="vertical" disableElevation>
+                  {Array.from(Array(4)).map((_) => {
+                    washerID++;
+                    washerStart++;
+                    return (
+                      <Washer
+                        key={washerID}
+                        placement="left"
+                        title="Out of Service"
+                        ID={washerID}
+                        washerData={machines[washerStart]}
+                      />
+                    );
+                  })}
+                </ButtonGroup>
+                <ButtonGroup disableElevation orientation="vertical">
+                  {Array.from(Array(4)).map((_) => {
+                    washerID++;
+                    washerStart++;
+                    return (
+                      <Washer
+                        key={washerID}
+                        placement="right"
+                        title="Out of Service"
+                        ID={washerID}
+                        washerData={machines[washerStart]}
+                      />
+                    );
+                  })}
+                </ButtonGroup>
+              </Box>
+            </Box>
             <Grid item xs={2}>
               <Image src={SeatKidArea} alt="Seating and Kids Area" />
             </Grid>

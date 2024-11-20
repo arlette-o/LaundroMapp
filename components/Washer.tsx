@@ -6,6 +6,7 @@ import ClickAwayListener from "@mui/material/ClickAwayListener";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import Chip from "@mui/material/Chip";
+import Box from "@mui/material/Box";
 
 import Machine from "../components/types/machines";
 
@@ -66,7 +67,7 @@ export default function Washer({ placement, washerData }: WasherProps) {
 
   return (
     <ClickAwayListener onClickAway={handleTooltipClose}>
-      <div>
+      <Box display="flex" flexDirection="row" alignItems="center">
         {placement === "left" && <Chip label={washerData.ID} color={color} />}
         <Tooltip
           arrow
@@ -89,7 +90,7 @@ export default function Washer({ placement, washerData }: WasherProps) {
           </IconButton>
         </Tooltip>
         {placement === "right" && <Chip label={washerData.ID} color={color} />}
-      </div>
+      </Box>
     </ClickAwayListener>
   );
 }
