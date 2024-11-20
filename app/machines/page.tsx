@@ -265,7 +265,7 @@ export default function Machines() {
           </Grid>
         </Box>
       ) : (
-        <Skeleton variant="rounded" width={210} height={60} />
+        <Skeleton variant="rounded" width={2110} height={500} />
       )}
     </ThemeProvider>
   );
