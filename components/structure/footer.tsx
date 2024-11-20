@@ -29,8 +29,8 @@ export default function Footer() {
         sx={{
           display: "flex",
           flexDirection: "row",
-          ml: "10vw",
-          mr: "10vw",
+          ml: "5vw",
+          mr: "5vw",
           justifyContent: "space-between",
         }}
       >
@@ -43,7 +43,15 @@ export default function Footer() {
           Hobbiton Location: <br /> Coming Soon!
         </Typography>
         <Typography>
-          Contact Us: (111) 222-3333 <br /> or <br /> fakeemail@laundromapp.com
+          Contact Us:
+          <br />
+          (111) 222-3333
+          <br />
+          or
+          <br />
+          email@
+          <br />
+          laundromapp.com
         </Typography>
         <Typography>
           Open Daily from 5am to 11pm

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 
 import Alert from "@mui/material/Alert";
@@ -41,6 +42,10 @@ const initState: ClientInfo = {
 export default function CouponForm() {
   const [clientInfo, setClientInfo] = useState(initState);
   const [alert, setAlert] = useState(false);
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isTablet = useMediaQuery({
+    query: "(min-width: 769px) and (max-width: 1024px)",
+  });
 
   const handleChangeClientInfo = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -83,7 +88,7 @@ export default function CouponForm() {
   };
 
   return (
-    <Grid container spacing={2} width={"60%"}>
+    <Grid container spacing={2} width={isMobile || isTablet ? "110%" : "60%"}>
       <Grid item xs={6}>
         <TextField
           fullWidth

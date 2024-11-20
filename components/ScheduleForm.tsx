@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 
 import Button from "@mui/material/Button";
@@ -23,6 +24,10 @@ import PhoneIcon from "@mui/icons-material/Phone";
 
 export default function ScheduleForm() {
   const [deliveryInfo, setDeliveryInfo] = useState({});
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isTablet = useMediaQuery({
+    query: "(min-width: 769px) and (max-width: 1024px)",
+  });
 
   const handleChangeDeliveryInfo = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -34,7 +39,7 @@ export default function ScheduleForm() {
   };
 
   return (
-    <Grid container spacing={2} width={"60%"}>
+    <Grid container spacing={2} width={isMobile || isTablet ? "110%" : "60%"}>
       <Grid item xs={6}>
         <TextField
           fullWidth
@@ -124,7 +129,7 @@ export default function ScheduleForm() {
           }}
         />
       </Grid>
-      <Grid item xs={10}>
+      <Grid item xs={9}>
         <FormGroup>
           <FormControlLabel
             required
@@ -140,7 +145,7 @@ export default function ScheduleForm() {
           />
         </FormGroup>
       </Grid>
-      <Grid item xs={2}>
+      <Grid item xs={3}>
         <Button fullWidth variant="contained">
           Schedule
         </Button>
