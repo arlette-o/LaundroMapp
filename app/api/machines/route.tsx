@@ -9,6 +9,9 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(all);
   } catch (error: any) {
     console.error(error);
-    return NextResponse.json({ error: error });
+    return NextResponse.json({
+      error: "Internal server error",
+      message: error.message,
+    });
   }
 }
