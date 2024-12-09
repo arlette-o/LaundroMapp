@@ -12,11 +12,7 @@ const connectToMongo = async () => {
     console.log("Successful connection to database");
     return true;
   } catch (error: any) {
-    console.log(error);
-    return NextResponse.json({
-      error: "Mongo Connection Error",
-      message: error.message,
-    });
+    console.log("Error: Mongo connection error", error.message);
   }
 };
 
