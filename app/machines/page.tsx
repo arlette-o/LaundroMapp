@@ -34,6 +34,7 @@ export default function Machines() {
     const response = await fetch(`${ENVIRONMENT}api/machines`, {
       cache: "no-store",
     });
+    console.log(ENVIRONMENT);
 
     const data = await response.json();
     setMachines(data);
