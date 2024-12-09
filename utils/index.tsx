@@ -8,7 +8,7 @@ const connectToMongo = async () => {
 
   if (mongoose.connections[0].readyState) return true;
   try {
-    await mongoose.connect(URI);
+    await mongoose.connect(URI, { connectTimeoutMS: 30000 });
     console.log("Successful connection to database");
     return true;
   } catch (error: any) {

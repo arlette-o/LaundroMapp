@@ -38,7 +38,6 @@ export default function Machines() {
     });
 
     const data = await response.json();
-    console.log(data);
     setMachines(data);
   };
 
