@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { NextResponse } from "next/server";
 
 const URI = process.env.MONGO_URI;
 
@@ -10,8 +11,12 @@ const connectToMongo = async () => {
     await mongoose.connect(URI);
     console.log("Successful connection to database");
     return true;
-  } catch (error) {
+  } catch (error: any) {
     console.log(error);
+    return NextResponse.json({
+      error: "Mongo Connection Error",
+      message: error.message,
+    });
   }
 };
 
