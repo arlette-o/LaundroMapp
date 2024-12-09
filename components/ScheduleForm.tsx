@@ -21,6 +21,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import EmailIcon from "@mui/icons-material/Email";
 import GradeIcon from "@mui/icons-material/Grade";
 import PhoneIcon from "@mui/icons-material/Phone";
+import HomeIcon from "@mui/icons-material/Home";
 
 export default function ScheduleForm() {
   const [deliveryInfo, setDeliveryInfo] = useState({});
@@ -95,6 +96,21 @@ export default function ScheduleForm() {
             startAdornment: (
               <InputAdornment position="start">
                 <EmailIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+      </Grid>
+      <Grid item xs={12}>
+        <TextField
+          fullWidth
+          label="Address"
+          name="address"
+          onChange={handleChangeDeliveryInfo}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <HomeIcon />
               </InputAdornment>
             ),
           }}
