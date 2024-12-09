@@ -36,7 +36,6 @@ export default function Machines() {
       cache: "no-store",
       mode: "no-cors",
     });
-    console.log(ENVIRONMENT);
 
     const data = await response.json();
     setMachines(data);
