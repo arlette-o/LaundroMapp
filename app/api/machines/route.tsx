@@ -4,7 +4,7 @@ import MachineSchema from "@/utils/mongo/machineSchema";
 
 export async function GET(req: NextRequest) {
   try {
-    const all = await MachineSchema.find({}); /* .sort({
+    const all = await MachineSchema.find({}).maxTimeMS(20000); /* .sort({
       ID: 1,
     }); */
 

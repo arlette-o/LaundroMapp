@@ -32,7 +32,7 @@ export default function Machines() {
    - time left on reservations/durations */
   const fetchMachineData = async () => {
     const response = await fetch(`${ENVIRONMENT}api/machines`, {
-      cache: "no-store",
+      /* cache: "no-store", */
     });
 
     const data = await response.json();
