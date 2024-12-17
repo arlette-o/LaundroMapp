@@ -12,8 +12,9 @@ export async function GET(req: NextRequest) {
   } catch (error: any) {
     console.error(error);
     return NextResponse.json({
-      error: "Internal server error",
+      error: "Mongo Error",
       message: error.message,
+      code: error.code,
     });
   }
 }

@@ -42,6 +42,7 @@ export default function Machines() {
   useEffect(() => {
     fetchMachineData();
   }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <Box display="flex" flexDirection="row" justifyContent="center">
