@@ -31,9 +31,12 @@ export async function POST(req: NextRequest) {
     await client.save();
 
     return NextResponse.json({ message: "successfully console logged" });
-  } catch (error) {
+  } catch (error: any) {
     console.log(error);
-    return NextResponse.json({ error: error });
+    return NextResponse.json({
+      error: "Error logging coupon",
+      message: error.message,
+    });
   }
 }
 
