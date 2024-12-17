@@ -1,12 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
+import mongoose from "mongoose";
 
 import MachineSchema from "@/utils/mongo/machineSchema";
 
 export async function GET(req: NextRequest) {
   try {
-    const all = await MachineSchema.find({}).maxTimeMS(50000); /* .sort({
-      ID: 1,
-    }); */
+    mongoose.connection.once("open", () => {
+      console.log("still connected");
+    });
+    const all = await MachineSchema.find({});
 
     return NextResponse.json(all);
   } catch (error: any) {
